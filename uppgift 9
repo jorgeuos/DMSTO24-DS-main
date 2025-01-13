@@ -1,0 +1,9 @@
+def is_palindrome(string: str) -> bool:
+    #Ta bort alla mellanslag och gör strängen gemener
+    cleaned_string = ''.join(char.lower() for char in string if char.isalnum())
+    #Kontrollera om strängen är lika med sin omvända version
+    return cleaned_string == cleaned_string[::-1]
+
+print(is_palindrome("A man a plan a canal Panama"))  #Output: True
+print(is_palindrome("Hello"))                        #Output: False
+print(is_palindrome("121"))                          #Output: True
