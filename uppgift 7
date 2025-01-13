@@ -1,0 +1,10 @@
+def validate_password(password: str) -> bool:
+       if len(password) < 8:  #Kontrollera att lösenordet är minst 8 tecken långt
+        
+           return False
+       if not any(char.isdigit() for char in password):  #Kontrollera att det finns minst en siffra
+             return False
+       return True  #Om båda villkoren är uppfyllda, lösenordet är giltigt
+print(validate_password("abc123"))     #Output: False (kortare än 8 tecken)
+print(validate_password("abcdefgh"))   #Output: False (ingen siffra)
+print(validate_password("abc123def"))  #Output: True (minst 8 tecken och en siffra)
